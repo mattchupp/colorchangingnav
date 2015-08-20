@@ -14,7 +14,16 @@
 		.section {
 			width: 100%;
 			height: 600px;
-			clip-path: inset(0,0,0,0);
+			position: relative;
+		}
+		.section-clip {
+			clip: rect(auto, auto, auto, auto);
+			-webkit-clip-path: inset(0 0 0 0);
+			clip-path: inset(0 0 0 0);
+			width: 100%;
+			height: 600px;
+			position: absolute;
+			top: 0;
 		}
 		.background-blue {
 			background-color: blue;
@@ -27,7 +36,7 @@
 		}
 
 		.nav-bar {
-			/*position: fixed;*/
+			position: fixed;
 			margin: 0;
 			overflow: hidden;
 			z-index: 10;
@@ -55,16 +64,24 @@
 <body>
 
 	<div class="section background-blue">
-		<div class="nav-bar text nav-bar-text-blue">Hello World</div>
+		<div class="section-clip">
+			<div class="nav-bar text nav-bar-text-blue">Hello World</div>
+		</div>
 	</div>
 	<div class="section background-white">
-		<div class="nav-bar text nav-bar-text-white">Hello World</div>
+		<div class="section-clip">
+			<div class="nav-bar text nav-bar-text-white">Hello World</div>
+		</div>
 	</div>
 	<div class="section background-green">
-		<div class="nav-bar text nav-bar-text-green">Hello World</div>
+		<div class="section-clip">
+			<div class="nav-bar text nav-bar-text-green">Hello World</div>
+		</div>
 	</div>
 	<div class="section background-blue">
-		<div class="nav-bar text nav-bar-text-blue">Hello World</div>
+		<div class="section-clip">
+			<div class="nav-bar text nav-bar-text-blue">Hello World</div>
+		</div>
 	</div>
 
 </body>
